@@ -1,0 +1,60 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/java
+{
+"name": "Java",
+// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+"image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+
+"features": {
+"ghcr.io/devcontainers/features/java:1": {
+"version": "none",
+"installMaven": "true",
+"installGradle": "false"
+}
+},
+// --- START OF ADDED CODE ---
+"customizations": {
+"vscode": {
+"settings": {
+// Disable quick suggestions as you type
+"editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+},
+// Disables quick suggestions for Java files specifically
+ "[java]": {
+    "editor.quickSuggestions": false
+},
+// Disable inline suggestions (e.g., from GitHub Copilot)
+"editor.inlineSuggest.enabled": false,
+// Disable hover popups
+"editor.hover.enabled": false,
+// Disable GitHub Copilot completely if it's installed
+"github.copilot.enable": false,
+// Disable IntelliCode completions for Java
+"java.completion.enabled": false,
+"java.completion.favoriteStaticMembers": [],
+"java.signatureHelp.enabled": false,
+"java.inlayHints.parameterNames.enabled": "none",
+// Disable AI-specific completions for Java
+"vsintellicode.java.completionsEnabled": false
+//trying others
+
+}
+}
+}
+// --- END OF ADDED CODE ---
+
+// Use 'forwardPorts' to make a list of ports inside the container available locally.
+// "forwardPorts": [],
+
+// Use 'postCreateCommand' to run commands after the container is created.
+// "postCreateCommand": "java -version",
+
+// Configure tool-specific properties.
+// "customizations": {},
+
+// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+// "remoteUser": "root"
+}
