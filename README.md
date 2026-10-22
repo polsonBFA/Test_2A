@@ -1,4 +1,4 @@
-# CSTest 3 Coding Task
+# CSTest 2A Coding Task
 
 Complete the following exercises in GitHub. There is an assignment created for you.
 The GitHub document has an outline for the methods that you need to complete..
