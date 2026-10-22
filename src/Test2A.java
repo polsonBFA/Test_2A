@@ -1,7 +1,7 @@
 class Test2A {
   public static void main(String[] args) 
   {
-    System.out.println("Hello world!");
+    System.out.println(max (7,3));
   }
 
   /** Exercise 1
@@ -14,6 +14,7 @@ class Test2A {
   public static int max(int x, int y)
   {
     /* missing code */
+    return x;
   }
 
 
@@ -30,7 +31,7 @@ class Test2A {
   
        /* missing code */
   
-    return wages;
+    return 0;
   }
 
 
@@ -43,6 +44,7 @@ class Test2A {
   public static boolean isLeapYear(int year)
   {
      /* missing code */
+    return true;
   }
 
   
@@ -60,6 +62,7 @@ class Test2A {
   public static String orderWords(String s1, String s2, String s3)
   {
     /* missing code */
+    return "";
   }
 }
 
