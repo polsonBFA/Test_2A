@@ -1,7 +1,9 @@
 class Test2A {
   public static void main(String[] args) 
   {
-    System.out.println("Hello world!");
+    System.out.println(orderWords("dog","cat","hippo"));
+    System.out.println(isLeapYear(2004));
+    System.out.println(totalWages(45, 12.50));
   }
 
   /** Exercise 1
@@ -13,7 +15,21 @@ class Test2A {
   */
   public static int max(int x, int y)
   {
-    /* missing code */
+    int result = 0;
+    if (x > y)
+    {
+      result = x;
+    }
+    else if (y > x)
+    {
+      result = y;
+    }
+    else if (x == y)
+    {
+      result = x;
+    }
+    return result;
+
   }
 
 
@@ -26,10 +42,19 @@ class Test2A {
  */
   public static double totalWages(double hours, double rate)
   {
-	  double wages;
-  
-       /* missing code */
-  
+    double wages = 0.0;
+    if (hours > 40.0)
+    {
+      wages = (hours - 40.0) * rate * 1.5 + 40.0 * rate;
+    }
+    else if (hours < 40.0)
+    {
+      wages = hours * rate;
+    }
+    else if (hours == 40.0)
+    {
+      wages = 40.0 * rate;
+    }
     return wages;
   }
 
@@ -42,7 +67,14 @@ class Test2A {
 */
   public static boolean isLeapYear(int year)
   {
-     /* missing code */
+     if ((year % 4 == 0) && (year % 100 != 0 || year % 400 == 0))
+     {
+       return true;
+     }
+     else
+     {
+       return false;
+     }
   }
 
   
@@ -57,9 +89,30 @@ class Test2A {
   * @return A single string containing strings concatenated in alphabetical order
  */
 
-  public static String orderWords(String s1, String s2, String s3)
-  {
-    /* missing code */
+  public static String orderWords(String s1, String s2, String s3) {
+    String answer = "";
+    if (s1.compareTo(s2) < 0) {
+      if (s1.compareTo(s3) < 0) {
+        if (s2.compareTo(s3) < 0) {
+          answer =s1 + ", " + s2 + ", " + s3;
+        } else {
+          answer =s1 + ", " + s3 + ", " + s3;
+        }
+      } else {
+        answer =s3 + ", " + s1 + ", " + s2;
+      }
+    } else {
+      if (s2.compareTo(s3) < 0) {
+        if (s1.compareTo(s3) < 0) {
+          answer =s2 + ", " + s1 + ", " + s3;
+        } else {
+          answer =s2 + ", " + s3 + ", " + s1;
+        }
+      } else {
+        answer =s3 + ", " + s2 + ", " + s1;
+      }
+    }
+    return answer;
   }
 }
 
