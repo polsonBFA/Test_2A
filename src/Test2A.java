@@ -1,7 +1,10 @@
 class Test2A {
   public static void main(String[] args) 
   {
-    System.out.println("Hello world!");
+    System.out.println(max(2,6));
+    System.out.println(totalWages(42, 1));
+    System.out.println(isLeapYear(2004));
+    System.out.println(orderWords("c","b","a"));
   }
 
   /** Exercise 1
@@ -13,7 +16,10 @@ class Test2A {
   */
   public static int max(int x, int y)
   {
-    /* missing code */
+    if(x > y) {
+      return x;
+    }
+    return y;
   }
 
 
@@ -28,7 +34,11 @@ class Test2A {
   {
 	  double wages;
   
-       /* missing code */
+      if (hours > 40){
+        wages = 40 * rate + (hours-40) * (rate*1.5);
+      }else{
+        wages = hours * rate;
+      }
   
     return wages;
   }
@@ -42,7 +52,10 @@ class Test2A {
 */
   public static boolean isLeapYear(int year)
   {
-     /* missing code */
+     if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)){
+       return true;
+     }
+     return false;
   }
 
   
@@ -59,7 +72,22 @@ class Test2A {
 
   public static String orderWords(String s1, String s2, String s3)
   {
-    /* missing code */
+    if (s1.compareTo(s2) >= 0 && s1.compareTo(s3) >= 0){
+      if (s2.compareTo(s3) >= 0){
+        return s3 + ", " + s2 + ", " + s1;
+      }
+      return s2 + ", " + s3 + ", " + s1;
+    }else if (s2.compareTo(s1) >= 0 && s2.compareTo(s3) >= 0){
+      if (s1.compareTo(s3) >= 0){
+        return s3 + ", " + s1 + ", " + s2;
+      }
+      return s1 + ", " + s3 + ", " + s2;
+    }else{
+      if (s1.compareTo(s2) >= 0){
+        return s2 + ", " + s1 + ", " + s3;
+      }
+      return s1 + ", " + s2 + ", " + s3;
+    }
   }
 }
 
