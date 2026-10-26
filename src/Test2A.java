@@ -14,6 +14,15 @@ class Test2A {
   public static int max(int x, int y)
   {
     /* missing code */
+    if (x > y)
+    {
+      return x;
+    }
+    else
+    {
+      return y;
+    }
+
   }
 
 
@@ -29,8 +38,17 @@ class Test2A {
 	  double wages;
   
        /* missing code */
-  
-    return wages;
+
+    if (hours <= 40)
+    {
+      return rate;
+    }
+    else
+    {
+      return ((hours - 40) * (rate * 1.5));
+    }
+
+
   }
 
 
@@ -43,6 +61,14 @@ class Test2A {
   public static boolean isLeapYear(int year)
   {
      /* missing code */
+    if ((year % 4 == 0) && (year % 100 != 0 || year % 400 == 0))
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
   }
 
   
@@ -57,10 +83,21 @@ class Test2A {
   * @return A single string containing strings concatenated in alphabetical order
  */
 
-  public static String orderWords(String s1, String s2, String s3)
-  {
+  public static String orderWords(String s1, String s2, String s3) {
     /* missing code */
+    if ((s1.compareTo(s2) < 0) && (s1.compareTo(s3) < 0 ) && (s2.compareTo(s3) < 0))
+    {
+      return (s1, s2 , s3);
+    }
+    else if ((s2.compareTo(s3)) && (s2.compareTp(s1)) && (s1.compareTo(s3) < 0))
+    {
+      return (s2 , s1 , s3);
+    }
+    else
+      return (s3, s2 , s1);
   }
+
+
 }
 
 
