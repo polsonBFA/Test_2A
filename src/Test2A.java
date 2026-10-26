@@ -1,7 +1,11 @@
 class Test2A {
   public static void main(String[] args) 
   {
-    System.out.println("Hello world!");
+
+    System.out.println(max(5,9));
+    System.out.println(totalWages(45, 12.50));
+    System.out.println(isLeapYear(2003));
+
   }
 
   /** Exercise 1
@@ -14,6 +18,18 @@ class Test2A {
   public static int max(int x, int y)
   {
     /* missing code */
+    if (x > y)
+    {
+      return x;
+    }
+    else if (x < y)
+    {
+      return y;
+    }
+    else
+    {
+      return x;
+    }
   }
 
 
@@ -27,9 +43,23 @@ class Test2A {
   public static double totalWages(double hours, double rate)
   {
 	  double wages;
+      double overtimePay;
+      double overtimeHours;
+      double overtimeRate;
   
        /* missing code */
-  
+    if (hours > 40)
+    {
+      overtimeHours = hours - 40;
+      overtimeRate = rate * 1.5;
+      overtimePay = overtimeHours  * overtimeRate;
+      wages = 40 * rate;
+      return overtimePay + wages;
+    }
+    else
+    {
+      wages = hours * rate;
+    }
     return wages;
   }
 
@@ -43,6 +73,18 @@ class Test2A {
   public static boolean isLeapYear(int year)
   {
      /* missing code */
+    if (year % 4 == 0 && year % 100 != 0)
+    {
+      return true;
+    }
+    else if (year % 4 == 0 && year % 400 == 0)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
   }
 
   
@@ -60,6 +102,7 @@ class Test2A {
   public static String orderWords(String s1, String s2, String s3)
   {
     /* missing code */
+    // if (s1.compareTo(s2) < s1.compareTo(s3) && s2.compareTo(s3) < s)
   }
 }
 
