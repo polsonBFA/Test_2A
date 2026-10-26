@@ -1,7 +1,7 @@
 class Test2A {
   public static void main(String[] args) 
   {
-    System.out.println("Hello world!");
+    System.out.println(orderWords("a", "b", "c"));
   }
 
   /** Exercise 1
@@ -13,7 +13,10 @@ class Test2A {
   */
   public static int max(int x, int y)
   {
-    /* missing code */
+    if ( x >= y)
+      return x;
+    else
+      return y;
   }
 
 
@@ -26,9 +29,15 @@ class Test2A {
  */
   public static double totalWages(double hours, double rate)
   {
-	  double wages;
+	  double wages = 0;
   
-       /* missing code */
+       if (hours > 0)
+       {
+         if (hours > 40)
+           wages = (rate * 40) + (hours - 40) * (1.5 * rate);
+         else
+           wages = hours * rate;
+       }
   
     return wages;
   }
@@ -42,7 +51,10 @@ class Test2A {
 */
   public static boolean isLeapYear(int year)
   {
-     /* missing code */
+     if ((year % 4 == 0) && (!(year % 100 == 0) || (year % 400 == 0)))
+       return true;
+     else
+       return false;
   }
 
   
@@ -59,7 +71,27 @@ class Test2A {
 
   public static String orderWords(String s1, String s2, String s3)
   {
-    /* missing code */
+    String firstword;
+    String secondword;
+    String thirdword;
+    if (s1.compareTo(s2) < 0 )
+    {
+      firstword = s1;
+      secondword = s1;
+      thirdword = s2;
+      if (s2.compareTo(s3) < 0)
+      {
+        secondword = s2;
+        thirdword = s3;
+      } else if (s3.compare.s1 < 0)
+      {
+        firstword = s3;
+      } else {
+        secondword = s3
+      }
+    }
+
+    return firstword, secondword, thirdword;
   }
 }
 
